@@ -262,7 +262,7 @@ while True:
 print(f"Got it — you're {age} years old.")
 ```
 
-> ‼️ You may not fully understand this code right now and thats totally okay!
+> ⚠️ You may not fully understand this code right now and thats totally okay!
 > This code contains if statements which will be disccussed in the upcoming lectures. 
 > You may also see this same check wrapped up inside something called a
 > **function**, like `def check_isdigit(user_input): return
