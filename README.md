@@ -1,10 +1,21 @@
 # Python Beginners Course — Computer Club
 
-A structured, self-paced Python course for club members. Each section has a
-notes file with concepts, examples, and a practice test. Section 1.5 wraps
-up with two hands-on milestone projects you can run yourself.
+A structured, self-paced Python course originally built for our computer
+club. Each section walks through the concepts with explanations and
+worked examples first, then summarizes everything in a quick-reference
+table, and finishes with a practice test. Section 1.5 wraps up with two
+hands-on milestone projects you can run yourself.
 
-## 📖 Course Outline
+> **Using this on your own?** This repo works fine as self-study — the
+> notes explain each concept from scratch with examples you can follow
+> along with. That said, it's written as companion material for our
+> in-person club sessions, where we go into more depth and work through
+> additional hands-on tasks and exercises together that aren't included
+> here. If you're studying solo, expect the notes to get you a strong
+> foundation, but know there's more practice covered in the
+> actual club meetings.
+
+## Course Outline
 
 | Section | Topic | Link |
 |---|---|---|
@@ -14,14 +25,14 @@ up with two hands-on milestone projects you can run yourself.
 | 1.4 | Methods & Functions | [1.04-methods-and-functions/notes.md](python-course-material/1.04-methods-and-functions) |
 | 1.5 | Milestone Projects | [1.05-milestone-projects/notes.md](python-course-material/1.05-milestone-projects) |
 
-## 🎮 Projects
+## Projects
 
 | Project | Description | Code |
 |---|---|---|
 | Number Guessing Game | Guess a random number between 1–100 with higher/lower hints | [guessing_game.py](python-course-material/1.05-milestone-projects/project-1-guessing-game) |
 | Simplified Tic Tac Toe | Two-player terminal Tic Tac Toe on a 3×3 grid | [tic_tac_toe.py](python-course-material/1.05-milestone-projects/project-2-tic-tac-toe) |
 
-## ✏️ How to Use This Course
+## How to Use This Course
 
 1. Work through each section's `notes.md` in order — read the concept
    tables, try the code examples yourself in Python, then take the
