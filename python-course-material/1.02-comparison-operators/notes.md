@@ -102,7 +102,7 @@ print(a is b)   # → False  (two different list objects, even though equal)
 8. What is the result of `True or False`?
 
 <details>
-<summary>✅ Answers</summary>
+<summary>Answers</summary>
 
 1. `True` — Python compares values, not types, so an int and a float with
    the same value are equal.
