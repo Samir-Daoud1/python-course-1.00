@@ -1,5 +1,78 @@
 # 1.2 — Comparison Operators
 
+A comparison operator asks Python a yes-or-no question about two values,
+and the answer always comes back as a boolean: `True` or `False`. These
+are the building blocks you'll use to make decisions in your programs.
+Things like "is the player's score high enough to win?" or "has the user
+run out of tries?" are done using comparison operators.
+
+The most basic comparisons check equality and size:
+
+```python
+print(7 == 7)     # → True   (are these equal?)
+print(7 == 8)     # → False
+print(7 != 8)     # → True   (are these NOT equal?)
+print(10 > 3)     # → True   (is 10 greater than 3?)
+print(10 < 3)     # → False
+```
+
+Two of these look similar to plain assignment but mean something very
+different — `>=` and `<=` include the case where the values are equal:
+
+```python
+print(5 >= 5)   # → True   (5 is equal to 5, so "greater or equal" holds)
+print(5 <= 4)   # → False
+```
+
+> ⚠️ A very common mistake: using a single `=` (assignment) where you meant
+> `==` (comparison) inside an `if` statement. `=` sets a value; `==` asks
+> a question.
+
+Often you need to check more than one condition at once. That's where
+`and`, `or`, and `not` come in handy since they combine boolean results together:
+
+```python
+temperature = 72
+is_raining = False
+
+# and → both sides must be True
+print(temperature > 60 and not is_raining)   # → True
+
+# or → only one side needs to be True
+print(temperature > 90 or is_raining)         # → False (neither is true here)
+
+# not → flips True to False and vice versa
+print(not is_raining)   # → True
+```
+
+Try changing the values above in your head (or in a real Python shell) and
+predicting the result before running it — that's the fastest way to build
+intuition for `and`/`or`.
+
+Two more operators let you check *membership* and *identity*. `in` checks
+whether something exists inside a collection:
+
+```python
+attendees = ['Maya', 'Leo', 'Priya']
+print('Leo' in attendees)      # → True
+print('Sam' in attendees)      # → False
+print('a' in 'banana')          # → True (checks substrings too!)
+```
+
+`is` looks different from `==` but is easy to confuse with it. `==` asks
+"do these have the same value?" while `is` asks "are these literally the
+exact same object in memory?" For beginners, stick to `==` for comparing
+values, `is` is mostly used for special cases like checking `is None`.
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)   # → True   (same values)
+print(a is b)   # → False  (two different list objects, even though equal)
+```
+
+**Quick reference**
+
 | Operator | Meaning |
 |---|---|
 | `==` | Equal to → `5 == 5` is `True` |
@@ -13,29 +86,6 @@
 | `not` | Reverses `True` to `False` and vice versa |
 | `in` | `'a' in 'cat'` → `True` (membership test) |
 | `is` | Checks if two things are the SAME object |
-
-**Examples**
-
-```python
-# Basic comparisons
-print(5 == 5)    # → True
-print(5 != 3)    # → True
-print(10 > 20)   # → False
-
-# Combining with and / or / not
-x = 7
-print(x > 5 and x < 10)  # → True
-print(x < 5 or x > 6)    # → True
-print(not (x == 7))       # → False
-
-# Membership test
-fruits = ['apple', 'banana']
-print('apple' in fruits)  # → True
-print('mango' in fruits)  # → False
-```
-
-> ⚠️ **Common Mistake** — Using `=` (assignment) instead of `==`
-> (comparison) inside an `if` statement.
 
 ---
 
