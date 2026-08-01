@@ -2,33 +2,103 @@
 
 ## Methods
 
-```python
-my_list = [3, 1, 2]
-my_list.sort()  # method called on the list object
-print(my_list)   # → [1, 2, 3]
+A method is a small tool that already belongs to a value, and you call it
+by writing a dot after that value, then the method's name. You've actually
+been using methods since section 1.1 (`.upper()`, `.append()`,
+`.isdigit()` are all methods), this section just puts a name to the
+pattern and shows how they fit into the bigger picture.
 
-my_str = 'hello'
-print(my_str.upper())          # → 'HELLO'
-print(my_str.replace('l','r'))  # → 'herro'
+```python
+numbers = [5, 3, 8, 1]
+numbers.sort()          # a method that belongs to lists
+print(numbers)            # → [1, 3, 5, 8]
+
+text = 'hello world'
+print(text.title())        # a method that belongs to strings
+                             # → 'Hello World'
 ```
+
+Different data types have different methods available, because a method
+only makes sense for the kind of data it works with — you can `.upper()` a
+string, but you can't `.upper()` a list.
 
 ## Defining Functions
 
+A function is a named, reusable block of code that you write yourself.
+Instead of copy-pasting the same lines over and over, you define the logic
+once, give it a name, and then just "call" that name whenever you need it.
+
+
 ```python
-# Define a function
-def greet(name):
-    return 'Hello, ' + name + '!'
+def square(number):
+    return number * number # return is discussed below
 
-# Call the function
-print(greet('Alice'))  # → 'Hello, Alice!'
-print(greet('Bob'))     # → 'Hello, Bob!'
+print(square(4))    # → 16
+print(square(7))    # → 49
+```
 
-# Function with default parameter
-def power(base, exp=2):
-    return base ** exp
+Here, `square` is the function's name, `number` is a **parameter** which is a
+placeholder for whatever value gets passed in. Every time you call `square(...)` with a different
+number, the function runs the same logic on that new value.
 
-print(power(3))     # → 9 (exp defaults to 2)
-print(power(3, 3))  # → 27
+Now you probably saw the `return` keyword and asked what it does.
+Basically, `return` is used inside a function to send a value back to whoever called
+that function, and it immediately ends the function right there — any
+code written after `return` in that function never runs. This is
+different from `print()`, which only displays something on the screen;
+`print()` doesn't hand a value back to the rest of your program to use.
+
+```python
+def double(number):
+    return number * 2
+
+result = double(9)   # result now holds 18
+print(result)          # → 18
+
+def is_even(number):
+    return number % 2 == 0   # returns True or False
+```
+
+You can give a function more than one parameter, and you can give a
+parameter a **default value** so the caller doesn't always have to supply
+it:
+
+```python
+def greet(name, greeting='Hello'):
+    return f'{greeting}, {name}!'
+
+print(greet('Maya'))              # → 'Hello, Maya!'          (uses the default)
+print(greet('Maya', 'Welcome'))   # → 'Welcome, Maya!'         (overrides the default)
+```
+
+Remember section 1.02's `check_isdigit` preview? Here's that exact idea,
+now that you know how `def` actually works:
+
+```python
+def check_isdigit(user_input):
+    return user_input.isdigit()
+
+answer = input('Enter a number: ')
+if check_isdigit(answer):
+    print("That's a valid number!")
+else:
+    print("That's not a number.")
+```
+
+All `check_isdigit` does is wrap `.isdigit()` in a function so you can
+reuse that exact check anywhere in your program just by calling
+`check_isdigit(answer)`, instead of retyping `answer.isdigit()` every
+time.
+
+Finally, you can attach a short description to a function using a
+**docstring** which is a string right under the `def` line, in triple quotes,
+explaining what the function does. This is purely for humans (and tools);
+Python doesn't require it, but it's good practice:
+
+```python
+def square(number):
+    """Returns the square of a number."""
+    return number * number
 ```
 
 ---
@@ -43,7 +113,7 @@ print(power(3, 3))  # → 27
 5. What is a docstring? Write a function with one.
 
 <details>
-<summary>✅ Answers</summary>
+<summary>Answers</summary>
 
 1. ```python
    def add(a, b):
